@@ -1,0 +1,25 @@
+buildscript {
+  repositories {
+    google()
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:3.1.2'
+  }
+}
+
+allprojects {
+
+  version = VERSION_NAME
+  group = GROUP
+
+  repositories {
+    google()
+    jcenter()
+  }
+}
+
+def isReleaseBuild() {
+  return version.contains("SNAPSHOT") == false
+}
+
